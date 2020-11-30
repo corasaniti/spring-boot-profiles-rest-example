@@ -1,6 +1,6 @@
-# Spring Boot "Microservice" Example Project
+# Spring Boot Microservice Example Project
 
-This is a sample Java / Maven / Spring Boot (version 1.5.6) application that can be used as a starter for creating a microservice complete with built-in health check, metrics and much more. I hope it helps you.
+This is a sample Java / Maven / Spring Boot (version 1.5.6) application that can be used as a starter for creating a microservice complete with built-in health check, metrics and much more.
 
 ## How to Run 
 
@@ -58,6 +58,7 @@ http://localhost:8091/metrics
 ### Create a hotel resource
 
 ```
+http://localhost:8090/example/v1/hotels
 POST /example/v1/hotels
 Accept: application/json
 Content-Type: application/json
@@ -85,6 +86,7 @@ Content: paginated list
 ### Update a hotel resource
 
 ```
+http://localhost:8090/example/v1/1
 PUT /example/v1/hotels/1
 Accept: application/json
 Content-Type: application/json
@@ -164,12 +166,18 @@ hotel.service:
   name: 'test profile:'
 ```
 
+### Create bootexample database: 
+```
+	create database bootexample
+```
+
 ### Then run is using the 'mysql' profile:
 
 ```
         java -jar -Dspring.profiles.active=mysql target/spring-boot-rest-example-0.5.0.war
 or
-        mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=mysql"
+        run_mysql.bat (windows)
+        run_mysql.sh  (linux)
 ```
 
 # Attaching to the app remotely from your IDE
